@@ -1,0 +1,96 @@
+using System;
+using System.Data;
+using System.Diagnostics.CodeAnalysis;
+using System.Drawing;
+using System.Threading.Channels;
+using System.Xml.Serialization;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+         string figure = Console.ReadLine();
+            
+            switch (figure)
+            {
+                case "triangle":
+                    Console.WriteLine("count");
+                    int count = int.Parse(Console.ReadLine());
+                    for (int row = 1; row <= count; row++)
+                    {
+                        string spaces = new string(' ', count - row);
+                        Console.Write(spaces);
+                        for (int col = 1; col <= row; col++)
+                        {
+                            Console.Write("* ");
+
+                        }
+                        Console.WriteLine();
+
+                    }
+                    
+
+                    break;
+                case "rhombus":
+                    Console.WriteLine("count");
+                    int count2 = int.Parse(Console.ReadLine());
+                    for (int row = 1; row <= count2; row++)
+                    {
+                        string spaces = new string(' ', count2 - row);
+                        Console.Write(spaces);
+                        for (int col = 1; col <= row; col++)
+                        {
+                            Console.Write("* ");
+
+                        }
+                        Console.WriteLine();
+
+                    }
+                    for (int row =count2 -  1; row >= 1 ; row--)
+                    {
+                        string spaces = new string(' ', count2 - row);
+                        Console.Write(spaces);
+                        for (int col = 1; col <= row; col++)
+                        {
+                            Console.Write("* ");
+
+                        }
+                        Console.WriteLine();
+
+                    }
+                    break;
+                case "square":
+                    Console.WriteLine("count");
+                    int count3 = int.Parse(Console.ReadLine());
+                    for (int row = 1; row <= count3; row++)                       
+                    {
+                        string spaces = new string(' ', count3);
+                        Console.Write(spaces);
+                        for (int col = 1; col <=count3; col++)
+                        {
+                            Console.Write("* ");
+
+                        }
+                        Console.WriteLine();
+
+                    }
+                    break;
+                case "i":
+
+                    Console.WriteLine("heigh");
+                    int height = int.Parse(Console.ReadLine());
+                    Console.WriteLine("width");  
+                        int width = int.Parse(Console.ReadLine());
+                    for (int row = 0; row < height; row++)
+                    {
+                        string space = new string (' ', height - row - 1);
+                        Console.Write(space);
+                        Console.WriteLine(new string('*', width));
+
+                    }
+                    
+                    break;
+
+            }
