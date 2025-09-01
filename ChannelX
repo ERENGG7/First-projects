@@ -1,0 +1,36 @@
+using System;
+
+namespace ChannelX
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           Console.WriteLine("What is your name");
+            string text = Console.ReadLine();
+
+            Console.WriteLine("What is your last name");
+
+            string text2 = Console.ReadLine();
+
+            Console.WriteLine(" Hello "+ text  + text2 );
+
+            Console.WriteLine("What is your age!");
+
+            int x = int.Parse(Console.ReadLine());
+
+            if (x < 18)
+            {
+                Console.WriteLine(" Sorry but you need to be 18 years old to use this application");
+            }
+            else if (x > 18)
+            {
+                Console.WriteLine("Very nice");
+             
+            }
+
+            Console.WriteLine($"Your age is {x} ");
+            Console.ReadKey();
+
+
+            
