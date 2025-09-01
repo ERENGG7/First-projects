@@ -1,0 +1,91 @@
+
+using Microsoft.VisualBasic;
+using System;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Threading.Channels;
+using System.Linq;
+using System.Numerics;
+
+namespace BORNOSUZOV.HATE.PAGE
+{
+    class Program
+    {
+      
+        static void Main(string[] args)
+        {
+            // catalog products: onion, bread, butter, juice.
+            // onion
+            // onion
+            // onion
+            // onion
+            PrintCatalog();
+            Console.WriteLine("Products count:");
+            int count = int.Parse(Console.ReadLine());
+            Console.WriteLine("Choose products"); 
+            // products collection
+            List<string>products = new List<string>();
+            double price = 0;
+            for (int i = 0; i < count; i++)
+            {
+                string product = Console.ReadLine();
+                switch (product)
+                {
+                    case "onion":
+                        price += 0.20;
+
+                        break;
+                    case "butter":
+                        price += 1.20;
+
+                        break;
+                    case "bread":
+                        price += 2.20;
+
+                        break;
+                    case "juice":
+                        price += 1.20;
+
+                        break;
+                        
+                }                           
+                products.Add(product);
+            }
+            products.Sort();
+            Console.WriteLine($"products count: {count}");
+            PrintLine();
+            string spaces = new string("               ");
+            Console.WriteLine(spaces);
+            for (int i = 0;i < products.Count; i++)
+            {                            
+                Console.WriteLine($"{i + 1}; product:{products[i]}");
+            }
+            Console.WriteLine(spaces);
+            Console.WriteLine($"Total price: {price:f2} BGN");
+            Console.WriteLine(spaces);
+            Console.WriteLine(spaces);
+            PrintGreetings();
+            PrintLine();
+            Console.ReadKey();
+
+        }
+        static void PrintCatalog()
+        {
+            Console.WriteLine
+                ("Onion, " +
+                "Bread," +
+                " Butter," +
+                " Juice" );
+        }      
+        static void PrintLine()
+        {
+            Console.WriteLine("----------------");
+        }
+        static void PrintGreetings()
+        {
+            string voidSpace = new string(" ");
+            Console.WriteLine("Thank you for choosing to shop at: ");
+            Console.WriteLine(voidSpace + "Top Shop" + voidSpace);
+        }
+
+
